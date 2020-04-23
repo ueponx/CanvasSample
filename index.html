@@ -21,6 +21,8 @@
         context.textBaseline = 'center';
         context.textAlign = 'center';
 
+        context.
+
         //start位置
         x = 1024;
         y = 300;
@@ -31,12 +33,12 @@
         function draw(text) {
             context.clearRect(0, 0, canvas.width, canvas.height);
             context.fillText(text, x, y);
+            let drawTextLength = context.measureText(text) ;
 
             x -= dx;
-            if (x < -(text).length * 32) {
-                //x = 1024;
+            if (x < -1*drawTextLength) {
                 clearInterval(timerID);
-                //alert(text);
+                alert(drawTextLength);
             }
         }
 
