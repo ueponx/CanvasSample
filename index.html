@@ -26,7 +26,7 @@
             { text: "AAAAAAAA", width: context.measureText("AAAAAAAA").width, x: 1024, y: 400, speed: 3, play: true },
         ];
 
-        array.forEach((v)=> {alert(v)});
+        array.forEach((v)=> {alert(v.text)});
 
         function draw(index) {
             context.fillText(array[index].text, array[index].x, array[index].y);
