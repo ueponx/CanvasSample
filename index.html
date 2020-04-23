@@ -21,8 +21,6 @@
         context.textBaseline = 'center';
         context.textAlign = 'center';
 
-        context.
-
         //start位置
         x = 1024;
         y = 300;
@@ -30,22 +28,18 @@
         //スクロール値（スピード）
         dx = 5;
 
-        function draw(text) {
+        function draw(text, drawTextLength) {
             context.clearRect(0, 0, canvas.width, canvas.height);
             context.fillText(text, x, y);
-            drawTextLength = context.measureText(text).width;
 
             x -= dx;
             if (x < -1 * drawTextLength) {
                 clearInterval(timerID);
-                alert(drawTextLength);
             }
         }
 
-        alert(context.measureText("ああああああ").width)
-
         timerID = setInterval(() => {
-            draw("ああああああ");
+            draw("ああああああ", context.measureText("ああああああ").width);
         }, 20);
     </script>
 </body>
