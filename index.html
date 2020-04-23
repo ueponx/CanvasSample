@@ -32,7 +32,8 @@
 
             x -= dx;
             if (x < -("Hello world!").length * 32) {
-                x = 1024;
+                //x = 1024;
+                clearInterval(timerID);
             }
         }
 
