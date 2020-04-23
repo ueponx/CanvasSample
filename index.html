@@ -13,23 +13,25 @@
         var canvas = document.getElementById("canvas");
         var context = canvas.getContext("2d");
 
-        var x = 10;
-        var y = 10;
-        var dx = 2;
-        var dy = 2;
+        //文字のスタイルを指定
+        context.font = '32px serif';
+        context.fillStyle = '#404040';
+        context.textBaseline = 'center';
+        context.textAlign = 'center';
+
+        x = 1024;
+        y = 300;
 
         function draw() {
 
-            context.clearRect(0, 0, canvas.width, canvas.height);
-            context.fillRect(x, y, 30, 30);
+            ctx.fillText(text.value, x, y);
 
-            x += dx;
-            y += dy;
-            if (x > canvas.width - 30 || y > canvas.height - 30) {
-                x = 10;
-                y = 10;
+            x -= dx;
+            if (x < 30) {
+                x = 1024;
             }
         }
+
         setInterval(draw, 10);
     </script>
 </body>
