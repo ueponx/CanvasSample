@@ -22,28 +22,19 @@
         context.textAlign = 'center';
 
         array = [
-            { text: "ああああああ", width: context.measureText("ああああああ").width, x: 1024, y: 300, speed: 5 },
-            { text: "AAAAAAAA", width: context.measureText("AAAAAAAA").width, x: 1024, y: 400, speed: 3 },
+            { text: "ああああああ", width: context.measureText("ああああああ").width, x: 1024, y: 300, speed: 5, play: true },
+            { text: "AAAAAAAA", width: context.measureText("AAAAAAAA").width, x: 1024, y: 400, speed: 3, play: true },
         ];
 
-        // //start位置
-        // x = 1024;
-        // y = 300;
-
-        // //スクロール値（スピード）
-        // dx = 5;
+        array.forEach((v)=> {alert(v)});
 
         function draw(index) {
-            // alert(array[index].text);
-            // alert(array[index].width);
-            // alert(array[index].x);
-            // alert(array[index].y);
-
             context.fillText(array[index].text, array[index].x, array[index].y);
 
             array[index].x -= array[index].speed;
             if (array[index].x < -1 * array[index].width) {
-                clearInterval(timerID);
+                //clearInterval(timerID);
+                delete(array[index]);
             }
         }
 
@@ -53,20 +44,6 @@
             draw(1);
         }, 20);
 
-        // function draw(text, drawTextLength) {
-        //     context.clearRect(0, 0, canvas.width, canvas.height);
-
-        //     context.fillText(text, x, y);
-
-        //     x -= dx;
-        //     if (x < -1 * drawTextLength) {
-        //         clearInterval(timerID);
-        //     }
-        // }
-
-        // timerID = setInterval(() => {
-        //     draw("ああああああ", context.measureText("ああああああ").width);
-        // }, 20);
     </script>
 </body>
 
