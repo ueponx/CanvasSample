@@ -10,7 +10,7 @@
     <h1>Canvasサンプル</h1>
     <canvas id="canvas" width=1024 height=768></canvas>
     <script type="text/javascript">
-        var canvas = document.getElementById("canvas5");
+        var canvas = document.getElementById("canvas");
         var context = canvas.getContext("2d");
 
         var x = 10;
@@ -18,9 +18,6 @@
         var dx = 2;
         var dy = 2;
 
-        context.clearRect(0, 0, canvas.width, canvas.height);
-        context.fillRect(x, y, 30, 30);
-        
         function draw() {
 
             context.clearRect(0, 0, canvas.width, canvas.height);
