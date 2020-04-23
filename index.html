@@ -44,14 +44,16 @@
             // draw(0);
             // draw(1);
             array.forEach((v) => {
-                draw(v); 
+                draw(v);
             });
-            if(array[0].play == false){
+            if (array[0].play == false) {
                 array.shift();
             }
         }, 20);
 
-
+        TESTtimerID = setInterval(() => {
+            array.push({ text: "追加テスト", width: context.measureText("追加テスト").width, x: 1024, y: 300, play: true });
+        }, 2000);
     </script>
 </body>
 
