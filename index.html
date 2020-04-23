@@ -30,7 +30,7 @@
         alert(colorTable[commentData[1].color]);
 
         function draw(value) {
-            context.fillStyle = colorTable(value.color);
+            context.fillStyle = colorTable[value.color];
             context.fillText(value.text, value.x, value.y);
 
             value.x -= speed;
