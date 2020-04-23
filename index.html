@@ -2,17 +2,28 @@
 <html>
 
 <head>
-    <title>Canvasサンプル1</title>
+    <title>Canvasサンプル2</title>
     <meta charset="UTF-8">
 </head>
 
 <body>
-    <h1>Canvasサンプル1</h1>
-    <canvas id="canvas1" width=100 height=100></canvas>
+    <h1>Canvasサンプル2</h1>
+    <canvas id="canvas2" width=300 height=300></canvas>
     <script type="text/javascript">
-        var canvas = document.getElementById("canvas1");
+        var canvas = document.getElementById("canvas2");
         var context = canvas.getContext("2d");
-        context.fillText("Hello World", 100, 100);
+
+        context.fillRect(0, 0, 100, 100);
+        context.strokeRect(100, 100, 50, 50);
+
+        context.beginPath();
+        context.moveTo(10, 200);
+        context.lineTo(100, 250);
+        context.moveTo(100, 250);
+        context.lineTo(200, 200);
+        context.rect(150, 250, 50, 50);
+        context.stroke();
+        context.closePath();
     </script>
 </body>
 
