@@ -36,11 +36,13 @@
             drawTextLength = context.measureText(text);
 
             x -= dx;
-            if (x < -1*drawTextLength) {
+            if (x < -1 * drawTextLength) {
                 clearInterval(timerID);
                 alert(drawTextLength);
             }
         }
+
+        alert(context.measureText("ああああああ"))
 
         timerID = setInterval(() => {
             draw("ああああああ");
