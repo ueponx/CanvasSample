@@ -30,18 +30,18 @@
 
         function draw(text) {
             context.clearRect(0, 0, canvas.width, canvas.height);
-            context.fillText("Hello world!", x, y);
+            context.fillText(text, x, y);
 
             x -= dx;
-            if (x < -("Hello world!").length * 32) {
+            if (x < -(text).length * 32) {
                 //x = 1024;
                 clearInterval(timerID);
-                alert(text);
+                //alert(text);
             }
         }
 
         timerID = setInterval(() => {
-            draw("aaaa");
+            draw("ああああああ");
         }, 20);
     </script>
 </body>
