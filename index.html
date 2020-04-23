@@ -6,12 +6,14 @@
     <meta charset="UTF-8">
 </head>
 
-<body style="background-color:rgba(237, 247, 255, 0.5)">
-    <h1>Canvasサンプル</h1>
+<body style="background-color:rgb(237, 247, 255)">
+    <h1>Canvasテストサンプル</h1>
     <canvas id="canvas" width=1024 height=768></canvas>
     <script type="text/javascript">
-        var canvas = document.getElementById("canvas");
-        var context = canvas.getContext("2d");
+        let canvas = document.getElementById("canvas");
+        let context = canvas.getContext("2d");
+        let timerID;
+
 
         //文字のスタイルを指定
         context.font = '32px serif';
@@ -27,13 +29,14 @@
         function draw() {
             context.clearRect(0, 0, canvas.width, canvas.height);
             context.fillText("Hello world!", x, y);
+            
             x -= dx;
-            if (x < 30) {
+            if (x < 0) {
                 x = 1024;
             }
         }
 
-        setInterval(draw, 20);
+        timerID = setInterval(draw, 20);
     </script>
 </body>
 
