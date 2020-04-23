@@ -22,8 +22,7 @@
         context.textAlign = 'center';
 
         let array = [
-            { text: "ああああああ", width: context.measureText("ああああああ").width, startX: 1024, startY: 300, speed: 5 },
-            { text: 1, width: 2, startX: 3, startY: 4 },
+            { text: "ああああああ", width: context.measureText("ああああああ").width, x: 1024, y: 300, speed: 5 },
         ];
 
         //start位置
@@ -33,24 +32,24 @@
         //スクロール値（スピード）
         dx = 5;
 
-        alert(array[0].text);
-        alert(array[0].width);
-        alert(array[0].startX);
-        alert(array[0].startY);
+        // alert(array[0].text);
+        // alert(array[0].width);
+        // alert(array[0].x);
+        // alert(array[0].y);
 
-        function draw(text, drawTextLength) {
+        function draw(index) {
             context.clearRect(0, 0, canvas.width, canvas.height);
 
-            context.fillText(text, x, y);
+            context.fillText(array[index].text, array[index].x, array[index].y);
 
-            x -= dx;
-            if (x < -1 * drawTextLength) {
+            x -= array[index].speed;
+            if (x < -1 * array[index].width) {
                 clearInterval(timerID);
             }
         }
 
         timerID = setInterval(() => {
-            draw("ああああああ", context.measureText("ああああああ").width);
+            draw(0);
         }, 20);
 
         // function draw(text, drawTextLength) {
