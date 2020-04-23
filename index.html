@@ -42,8 +42,8 @@
 
             context.fillText(array[index].text, array[index].x, array[index].y);
 
-            x -= array[index].speed;
-            if (x < -1 * array[index].width) {
+            array[index].x -= array[index].speed;
+            if (array[index].x < -1 * array[index].width) {
                 clearInterval(timerID);
             }
         }
