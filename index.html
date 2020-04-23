@@ -52,7 +52,8 @@
         }, 20);
 
         TESTtimerID = setInterval(() => {
-            array.push({ text: "追加テスト", width: context.measureText("追加テスト").width, x: 1024, y: 300, play: true });
+            let random = Math.floor( Math.random() * 200 ) + 400;
+            array.push({ text: "追加テスト", width: context.measureText("追加テスト").width, x: 1024, y: random, play: true });
         }, 2000);
     </script>
 </body>
