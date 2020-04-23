@@ -33,7 +33,7 @@
         function draw(text) {
             context.clearRect(0, 0, canvas.width, canvas.height);
             context.fillText(text, x, y);
-            let drawTextLength = context.measureText(text);
+            drawTextLength = context.measureText(text);
 
             x -= dx;
             if (x < -1*drawTextLength) {
