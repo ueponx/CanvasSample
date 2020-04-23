@@ -28,12 +28,12 @@
         //スクロール値（スピード）
         dx = 5;
 
-        function draw(text) {
+        function draw() {
             context.clearRect(0, 0, canvas.width, canvas.height);
-            context.fillText(text, x, y);
+            context.fillText("Hello world!", x, y);
 
             x -= dx;
-            if (x < -(text).length * 32) {
+            if (x < -("Hello world!").length * 32) {
                 //x = 1024;
                 clearInterval(timerID);
             }
