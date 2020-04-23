@@ -33,7 +33,7 @@
         function draw(text) {
             context.clearRect(0, 0, canvas.width, canvas.height);
             context.fillText(text, x, y);
-            drawTextLength = context.measureText(text);
+            drawTextLength = context.measureText(text).width;
 
             x -= dx;
             if (x < -1 * drawTextLength) {
@@ -42,7 +42,7 @@
             }
         }
 
-        alert(context.measureText("ああああああ"))
+        alert(context.measureText("ああああああ").width)
 
         timerID = setInterval(() => {
             draw("ああああああ");
