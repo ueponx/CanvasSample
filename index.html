@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>Canvasサンプル</title>
-    <meta charset="UTF-8">
+<title>Canvasサンプル</title>
+<meta charset="UTF-8">
 </head>
-
 <body>
-    <h1>Canvasサンプル</h1>
-    <canvas id="canvas2" width=300 height=300></canvas>
-    <script type="text/javascript">
-        var canvas = document.getElementById("canvas2");
-        var context = canvas.getContext("2d");
+<h1>Canvasサンプル</h1>
+<canvas id="canvas" width=1024 height=768></canvas>
+<script type="text/javascript">
+var canvas = document.getElementById("canvas5");
+var context = canvas.getContext("2d");
 
-        context.fillText("Hello World", 100, 100);
-        /*
-            context.fillRect(0, 0, 100, 100);
-            context.strokeRect(100, 100, 50, 50);
+var x = 10;
+var y = 10;
+var dx = 2;
+var dy = 2;
 
-            context.beginPath();
-            context.moveTo(10, 200);
-            context.lineTo(100, 250);
-            context.moveTo(100, 250);
-            context.lineTo(200, 200);
-            context.rect(150, 250, 50, 50);
-            context.stroke();
-            context.closePath();
-        */
-
-    </script>
+function draw() {
+    
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    context.fillRect(x, y, 30, 30);
+    
+	x += dx;
+	y += dy;
+	if(x > canvas.width - 30 || y > canvas.height - 30)
+	{
+		x = 10;
+		y = 10;
+	}
+}
+setInterval(draw, 10);
+</script>
 </body>
-
 </html>
