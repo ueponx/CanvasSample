@@ -23,11 +23,9 @@
         speed = 5;
 
         array = [
-            { text: "ああああああ", width: context.measureText("ああああああ").width, x: 1024, y: 80, play: true },
-            { text: "AAAAAAAA", width: context.measureText("AAAAAAAA").width, x: 1024, y: 100, play: true },
+            { text: "ああああああ👏", width: context.measureText("ああああああ").width, x: 1024, y: 80, play: true },
+            { text: "AAAAAAAA", width: context.measureText("AAAAAAAA").width, x: 1024, y: 120, play: true },
         ];
-
-        array.forEach((v) => { alert(v.text) });
 
         function draw(value) {
             context.fillText(value.text, value.x, value.y);
@@ -52,7 +50,7 @@
         }, 20);
 
         TESTtimerID = setInterval(() => {
-            let random = Math.floor( Math.random() * 200 ) + 50;
+            let random = Math.floor( Math.random() * 150 ) + 30;
             array.push({ text: "追加テスト"+random , width: context.measureText("追加テスト").width, x: 1024, y: random, play: true });
         }, 1000);
     </script>
