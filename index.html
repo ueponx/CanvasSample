@@ -20,29 +20,37 @@
         context.fillStyle = '#404040';
         context.textBaseline = 'center';
         context.textAlign = 'center';
+        speed = 5;
 
         array = [
-            { text: "ああああああ", width: context.measureText("ああああああ").width, x: 1024, y: 300, speed: 5, play: true },
-            { text: "AAAAAAAA", width: context.measureText("AAAAAAAA").width, x: 1024, y: 400, speed: 3, play: true },
+            { text: "ああああああ", width: context.measureText("ああああああ").width, x: 1024, y: 300, play: true },
+            { text: "AAAAAAAA", width: context.measureText("AAAAAAAA").width, x: 1024, y: 400, play: true },
         ];
 
-        array.forEach((v)=> {alert(v.text)});
+        array.forEach((v) => { alert(v.text) });
 
-        function draw(index) {
-            context.fillText(array[index].text, array[index].x, array[index].y);
+        function draw(value) {
+            context.fillText(value.text, value.x, value.y);
 
-            array[index].x -= array[index].speed;
-            if (array[index].x < -1 * array[index].width) {
+            value.x -= speed;
+            if (value.x < -1 * value.width) {
                 //clearInterval(timerID);
-                delete(array[index]);
+                value.play = false;
             }
         }
 
         timerID = setInterval(() => {
             context.clearRect(0, 0, canvas.width, canvas.height);
-            draw(0);
-            draw(1);
+            // draw(0);
+            // draw(1);
+            array.forEach((v) => {
+                draw(v); 
+            });
+            if(array[0].play == false){
+                array.shift();
+            }
         }, 20);
+
 
     </script>
 </body>
