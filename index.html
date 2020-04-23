@@ -29,9 +29,9 @@
         function draw() {
             context.clearRect(0, 0, canvas.width, canvas.height);
             context.fillText("Hello world!", x, y);
-            
+
             x -= dx;
-            if (x < 0) {
+            if (x < -("Hello world!").length * 32) {
                 x = 1024;
             }
         }
