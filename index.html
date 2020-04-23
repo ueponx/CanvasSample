@@ -28,8 +28,9 @@
         //スクロール値（スピード）
         dx = 5;
 
-        function draw(text, drawTextLength) {
+        function draw(text, drawTextLength, x, y) {
             context.clearRect(0, 0, canvas.width, canvas.height);
+
             context.fillText(text, x, y);
 
             x -= dx;
@@ -39,7 +40,10 @@
         }
 
         timerID = setInterval(() => {
-            draw("ああああああ", context.measureText("ああああああ").width);
+            draw("ああああああ",
+                context.measureText("ああああああ").width,
+                x,
+                y);
         }, 20);
     </script>
 </body>
