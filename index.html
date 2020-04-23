@@ -21,7 +21,7 @@
         context.textBaseline = 'center';
         context.textAlign = 'center';
 
-        let array = [
+        array = [
             { text: "ああああああ", width: context.measureText("ああああああ").width, x: 1024, y: 300, speed: 5 },
         ];
 
@@ -32,13 +32,13 @@
         //スクロール値（スピード）
         dx = 5;
 
-        // alert(array[0].text);
-        // alert(array[0].width);
-        // alert(array[0].x);
-        // alert(array[0].y);
-
         function draw(index) {
             context.clearRect(0, 0, canvas.width, canvas.height);
+
+            alert(array[index].text);
+            alert(array[index].width);
+            alert(array[index].x);
+            alert(array[index].y);
 
             context.fillText(array[index].text, array[index].x, array[index].y);
 
