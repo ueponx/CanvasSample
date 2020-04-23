@@ -34,8 +34,6 @@
         // dx = 5;
 
         function draw(index) {
-            context.clearRect(0, 0, canvas.width, canvas.height);
-
             // alert(array[index].text);
             // alert(array[index].width);
             // alert(array[index].x);
@@ -50,6 +48,7 @@
         }
 
         timerID = setInterval(() => {
+            context.clearRect(0, 0, canvas.width, canvas.height);
             draw(0);
             draw(1);
         }, 20);
