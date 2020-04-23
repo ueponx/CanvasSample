@@ -24,8 +24,10 @@
 
         commentData = [
             { text: "👏👏👏👏👏👏", width: context.measureText("👏👏👏👏👏👏").width, x: 1024, y: 80, color: 0, play: true },
-            { text: "AAAAAAAA", width: context.measureText("AAAAAAAA").width, x: 1024, y: 120, color: 0, play: true },
+            { text: "AAAAAAAA", width: context.measureText("AAAAAAAA").width, x: 1024, y: 120, color: 1, play: true },
         ];
+
+        alert(colorTable(commentData[1].color));
 
         function draw(value) {
             context.fillStyle = colorTable(value.color);
