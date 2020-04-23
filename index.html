@@ -14,17 +14,17 @@
         let context = canvas.getContext("2d");
         let timerID;
 
-
         //文字のスタイルを指定
         context.font = '32px serif';
         context.fillStyle = '#404040';
         context.textBaseline = 'center';
-        //context.textAlign = 'center';
         speed = 5;
 
-        array = [
-            { text: "ああああああ👏", width: context.measureText("ああああああ").width, x: 1024, y: 80, play: true },
-            { text: "AAAAAAAA", width: context.measureText("AAAAAAAA").width, x: 1024, y: 120, play: true },
+        colorTable = ['#FFCC33', '#66FF66', '#FF0000', '#0066FF'];
+
+        commentData = [
+            { text: "ああああああ👏", width: context.measureText("ああああああ").width, x: 1024, y: 80, color:0, play: true },
+            { text: "AAAAAAAA", width: context.measureText("AAAAAAAA").width, x: 1024, y: 120,  color:0, play: true },
         ];
 
         function draw(value) {
@@ -41,17 +41,18 @@
             context.clearRect(0, 0, canvas.width, canvas.height);
             // draw(0);
             // draw(1);
-            array.forEach((v) => {
+            commentData.forEach((v) => {
                 draw(v);
             });
-            if (array[0].play == false) {
-                array.shift();
+            if (commentData[0].play == false) {
+                commentData.shift();
             }
         }, 20);
 
         TESTtimerID = setInterval(() => {
             let random = Math.floor( Math.random() * 150 ) + 30;
-            array.push({ text: "追加テスト"+random , width: context.measureText("追加テスト").width, x: 1024, y: random, play: true });
+            let colorIndex = Math.floor(Math.random()*4);
+            commentData.push({ text: "追加テスト"+random , width: context.measureText("追加テスト").width, x: 1024, y: random, color:colorIndex, play: true });
         }, 1000);
     </script>
 </body>
